@@ -145,11 +145,11 @@ Open the link (typically [http://localhost:8501](http://localhost:8501)) in your
 
 ### News Under "Sports" Category
 
-![Food Tab](./assets/Img-3.png)
+![Sports Tab](./assets/Img-3.png)
 
 ### News Under "Business" Category
 
-![Travel Tab](./assets/Img-4.png)
+![Business Tab](./assets/Img-4.png)
 
 
 
