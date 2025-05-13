@@ -57,6 +57,6 @@ A front-end interface was developed using Streamlit to interact with the Naive B
 
 ##Image Gallery
 ![Alt Text](/assets/Img-1.png?raw=true)
-![Alt Text](https://github.com/ParthaSarathi-23/Newsification/blob/main/Img-2.png?raw=true)
-![Alt Text](https://github.com/ParthaSarathi-23/Newsification/blob/main/Img-3.png?raw=true)
-![Alt Text](https://github.com/ParthaSarathi-23/Newsification/blob/main/Img-4.png?raw=true)
+![Alt Text](/assets/Img-2.png?raw=true)
+![Alt Text](/assets/Img-3.png?raw=true)
+![Alt Text](/assets/Img-4.png?raw=true)
