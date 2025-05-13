@@ -1,154 +1,167 @@
-
 # NewsPalette: News Article Classification
-October 2024
+
+**October 2024**
 
 ## Introduction
-NewsPalette is a machine learning project designed to classify news articles into predefined categories. This application utilizes the Naive Bayes algorithm to perform the classification, trained on a dataset sourced from Kaggle. The primary goal is to accurately categorize news content, providing users with an organized way to consume information based on their interests.
+
+NewsPalette is a machine learning project designed to classify news articles into predefined categories using the Naive Bayes algorithm. Trained on a Kaggle dataset, this application helps organize news content based on user interests, offering an intuitive experience through a sleek Streamlit web interface.
 
 ## Features
-*   **Automated News Classification:** Predicts the category of a news article based on its headline (and potentially description).
-*   **Interactive User Interface:** A user-friendly web application built with Streamlit allows users to input news details for on-the-fly classification.
-*   **Categorized News Display:** Users can browse pre-loaded news articles sorted into dedicated tabs for each category.
-*   **Model Performance:** Displays the accuracy of the classification model.
-*   **Custom Styling:** Enhanced visual appeal through custom CSS integrated within the Streamlit app.
+
+* **Automated News Classification**: Predicts the category of a news article based on its headline (and optionally the description).
+* **Interactive User Interface**: Built with Streamlit, enabling real-time input and instant predictions.
+* **Categorized News Display**: Allows users to browse articles by category through tabbed sections.
+* **Model Accuracy Display**: Shows the performance metrics of the model.
+* **Custom Styling**: Integrates custom CSS for an enhanced UI/UX.
 
 ## News Categories
-The model classifies news articles into the following 10 categories:
-*   Wellness
-*   Politics
-*   Entertainment
-*   Travel
-*   Style & Beauty
-*   Parenting
-*   Food & Drink
-*   World News
-*   Business
-*   Sports
+
+The model classifies articles into 10 categories:
+
+* Wellness
+* Politics
+* Entertainment
+* Travel
+* Style & Beauty
+* Parenting
+* Food & Drink
+* World News
+* Business
+* Sports
 
 ## Technologies Used
-*   **Programming Language:** Python
-*   **Machine Learning:** Scikit-learn (for Naive Bayes, TF-IDF Vectorizer, metrics)
-*   **Data Handling:** Pandas
-*   **Web Framework:** Streamlit
-*   **Model Persistence:** Pickle
-*   **Development Environment:** Standard Python environment (e.g., VS Code, Jupyter Notebooks for model development)
+
+* **Programming Language**: Python
+* **Machine Learning**: Scikit-learn (Naive Bayes, TF-IDF, metrics)
+* **Data Handling**: Pandas
+* **Web Framework**: Streamlit
+* **Model Persistence**: Pickle
+* **Development Environment**: VS Code / Jupyter Notebooks
 
 ## Dataset & Preprocessing
-The dataset for this project was sourced from Kaggle (`NewsCategorizer.csv`). Rigorous preprocessing was crucial to prepare the data for the Naive Bayes algorithm.
+
+**Source**: `NewsCategorizer.csv` (Kaggle)
 
 ### Data Cleaning
-1.  **Removing Null Values:** Rows containing any null values were removed to ensure data integrity and prevent errors during model training.
-2.  **Removing Duplicates:** Duplicate news entries were identified and removed to avoid bias and redundancy in the training data.
-3.  **Removing Unwanted Columns:** Columns not relevant to the classification task (e.g., author names, specific dates if not used as features) were dropped to reduce dimensionality and focus on textual content.
+
+* **Remove Nulls**: Ensured data integrity by dropping rows with missing values.
+* **Remove Duplicates**: Eliminated redundant entries to prevent training bias.
+* **Drop Irrelevant Columns**: Removed columns not relevant to classification (e.g., author, dates).
 
 ### Text Processing
-The textual data (primarily headlines and short descriptions) underwent several normalization steps:
-1.  **Removing Punctuation:** All punctuation marks (e.g., '.', ',', '!', '?') were removed as they generally do not contribute significantly to topic classification.
-2.  **Converting to Lower Case:** All text was converted to lowercase to ensure consistency and treat words like "News" and "news" as identical.
-3.  **Removing Digits:** Numeric digits were removed from the text as they are typically not indicative of news article categories.
-4.  **Removing Stopwords:** Common English words (e.g., 'and', 'the', 'is', 'a') that offer little semantic value for classification were removed using a standard stopwords list.
-5.  **Lemmatization:** Words were reduced to their base or dictionary form (lemma) (e.g., "running" to "run", "studies" to "study"). This helps in consolidating different forms of a word into a single feature, improving model accuracy.
+
+* **Lowercasing**: Standardized text for uniform analysis.
+* **Punctuation Removal**: Removed punctuation to reduce noise.
+* **Digit Removal**: Removed non-informative numerical characters.
+* **Stopwords Removal**: Filtered out common English stopwords.
+* **Lemmatization**: Reduced words to their root forms for better generalization.
 
 ## Methodology
 
 ### TF-IDF Vectorization
-TF-IDF (Term Frequency-Inverse Document Frequency) was employed to convert the preprocessed text data into numerical feature vectors. This technique assigns a weight to each word in a document based on its frequency within that document and its inverse frequency across the entire corpus. Words that are frequent in a specific document but rare in others receive higher TF-IDF scores, making them more significant for classification. The trained TF-IDF vectorizer is saved as `vector.pkl`.
+
+* Converts text into numerical features.
+* Highlights important words by considering their frequency across documents.
+* Saved as `vector.pkl` for reuse.
 
 ### Naive Bayes Classification
-The Multinomial Naive Bayes algorithm was chosen for this text classification task. It's a probabilistic classifier based on Bayes' theorem, assuming conditional independence between features (words) given the class. Despite its simplicity, Naive Bayes is highly effective and computationally efficient for text data. The trained model, which predicts the news category, is saved as `model.pkl`.
 
-## Frontend Development with Streamlit
-A dynamic and interactive front-end interface was developed using Streamlit. This allows users to:
-*   Input a news headline and (optionally) a short description and link.
-*   Submit the information to the backend Naive Bayes model for classification.
-*   View the predicted category and the model's accuracy.
-*   Browse existing news articles conveniently organized into tabs by category.
+* **Model**: Multinomial Naive Bayes
+* **Why**: Efficient, accurate, and suitable for text classification.
+* **Output**: Predicts one of the 10 categories.
+* **Model File**: Saved as `model.pkl`
 
-Streamlit's ease of use enabled rapid development of a functional and visually appealing web application for showcasing the classification model.
+## Frontend Development (Streamlit)
 
+Provides a web interface with the following capabilities:
+
+* Accepts user input (headline, optional description/link).
+* Sends input to the model for classification.
+* Displays the result and accuracy.
+* Shows categorized tabs with sample articles.
 
 ## Setup & Installation
-To set up and run this project locally:
 
-1.  **Clone the repository (if applicable) or download the project files.**
-    ```bash
-    # Example: git clone https://github.com/yourusername/NewsPalette.git
-    # cd NewsPalette
-    ```
+1. **Clone or Download the Repository**
 
-2.  **Create a Python virtual environment (recommended):**
-    ```bash
-    python -m venv venv
-    # On Windows
-    venv\Scripts\activate
-    # On macOS/Linux
-    source venv/bin/activate
-    ```
+```bash
+# Example:
+git clone https://github.com/yourusername/NewsPalette.git
+cd NewsPalette
+```
 
-3.  **Install dependencies:**
-    Create a `requirements.txt` file with the following content:
-    ```txt
-    streamlit
-    pandas
-    scikit-learn
-    # Add any other specific versions if necessary
-    ```
-    Then run:
-    ```bash
-    pip install -r requirements.txt
-    ```
+2. **Create a Virtual Environment (Recommended)**
 
-4.  **Ensure necessary files are present:**
-    Make sure `Home.py`, `NewsCategorizer.csv`, `model.pkl`, and `vector.pkl` are in the root directory of the project (or adjust paths in `Home.py` accordingly).
+```bash
+python -m venv venv
+# On Windows
+venv\Scripts\activate
+# On macOS/Linux
+source venv/bin/activate
+```
+
+3. **Install Dependencies**
+   Create a `requirements.txt` file:
+
+```txt
+streamlit
+pandas
+scikit-learn
+```
+
+Then install:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. **Verify Required Files are Present**
+   Ensure the following files are in the root directory:
+
+* `Home.py`
+* `NewsCategorizer.csv`
+* `model.pkl`
+* `vector.pkl`
 
 ## Usage
-To run the Streamlit application:
-bash
+
+To launch the application:
+
+```bash
 streamlit run Home.py
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-IGNORE_WHEN_COPYING_END
+```
 
-Navigate to the local URL provided by Streamlit in your web browser (usually http://localhost:8501).
+Open the link (typically [http://localhost:8501](http://localhost:8501)) in your browser.
 
-Image Gallery
+## Image Gallery
 
-Main interface for news input and classification:
+### Main Interface
 
-![alt text](./assets/Img-1.png)
+![News Input](./assets/Img-1.png)
 
-Display of predicted category and model accuracy:
+### Predicted Category Display
 
-![alt text](./assets/Img-4.png)
+![Prediction Output](./assets/Img-4.png)
 
-Example of news articles displayed under the "TRAVEL" category tab:
+### News Under "Travel" Category
 
-![alt text](./assets/Img-2.png)
+![Travel Tab](./assets/Img-2.png)
 
-Example of news articles displayed under another category tab (e.g., "FOOD & DRINK"):
+### News Under "Food & Drink" Category
 
-![alt text](./assets/Img-3.png)
+![Food Tab](./assets/Img-3.png)
 
-(Note: Ensure the image paths ./assets/Img-X.png are correct relative to your README.md file within your repository structure. If the images are in the root, it would be ./Img-X.png.)
+> ⚠️ Ensure the image paths are correct relative to your README location. Use `./assets/Img-X.png` if images are in the `assets/` folder.
 
-Future Enhancements
+## Future Enhancements
 
-Incorporate 'Description' in Prediction: Enhance the prediction model by using both the headline and description provided by the user, which might require retraining the model and TF-IDF vectorizer on combined text.
+* **Incorporate Description into Predictions**: Use both headline and description for richer context.
+* **Dynamic Image Integration**: Display news-relevant images if URLs are available.
+* **User Accounts & Preferences**: Enable login and personalized category tracking.
+* **Detailed Evaluation Metrics**: Add precision, recall, F1-score, and confusion matrix for transparency.
+* **Continuous Learning**: Automate model updates with new data.
+* **REST API Support**: Make classification accessible via API endpoints.
 
-Dynamic Image Display: If image URLs are available in the dataset, display relevant images for each news card instead of static placeholders.
+---
 
-User Accounts & Personalization: Allow users to create accounts and save preferred news categories.
-
-Advanced Model Evaluation: Implement more detailed model evaluation metrics (precision, recall, F1-score per category) and display a confusion matrix.
-
-Continuous Learning: Develop a pipeline to periodically retrain the model with new data to maintain accuracy.
-
-API Endpoint: Expose the classification model via an API for integration with other services.
-
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-IGNORE_WHEN_COPYING_END
+Feel free to contribute, raise issues, or fork this project to extend its capabilities!
