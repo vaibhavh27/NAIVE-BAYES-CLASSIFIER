@@ -66,24 +66,6 @@ A dynamic and interactive front-end interface was developed using Streamlit. Thi
 
 Streamlit's ease of use enabled rapid development of a functional and visually appealing web application for showcasing the classification model.
 
-## Project Structure
-The project is organized as follows:
-
-NewsPalette/
-├── Home.py # Main Streamlit application script
-├── NewsCategorizer.csv # Original dataset
-├── model.pkl # Serialized trained Naive Bayes model
-├── vector.pkl # Serialized TF-IDF vectorizer
-├── preprocessed.xlsx # (Optional) Excel file of preprocessed data
-├── assets/ # Folder for images
-│ ├── Img-1.png
-│ ├── Img-2.png
-│ ├── Img-3.png
-│ └── Img-4.png
-├── requirements.txt # Python package dependencies
-└── README.md # This file
-
-*(Note: `new_forms.html`, `style.css`, `summa.html` from the initial file list seem to be auxiliary or experimental and are not directly part of the core Streamlit app logic in `Home.py`)*
 
 ## Setup & Installation
 To set up and run this project locally:
