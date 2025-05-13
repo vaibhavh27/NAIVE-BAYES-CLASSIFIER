@@ -141,15 +141,17 @@ Open the link (typically [http://localhost:8501](http://localhost:8501)) in your
 
 ### Predicted Category Display
 
-![Prediction Output](./assets/Img-4.png)
+![Prediction Output](./assets/Img-2.png)
 
-### News Under "Travel" Category
-
-![Travel Tab](./assets/Img-2.png)
-
-### News Under "Food & Drink" Category
+### News Under "Sports" Category
 
 ![Food Tab](./assets/Img-3.png)
+
+### News Under "Business" Category
+
+![Travel Tab](./assets/Img-4.png)
+
+
 
 > ⚠️ Ensure the image paths are correct relative to your README location. Use `./assets/Img-X.png` if images are in the `assets/` folder.
 
