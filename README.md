@@ -67,8 +67,7 @@ A dynamic and interactive front-end interface was developed using Streamlit. Thi
 Streamlit's ease of use enabled rapid development of a functional and visually appealing web application for showcasing the classification model.
 
 ## Project Structure
-A typical structure for this project would be:
-
+The project is organized as follows:
 
 NewsPalette/
 ├── Home.py # Main Streamlit application script
