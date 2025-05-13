@@ -56,7 +56,7 @@ The dataset includes news articles categorized into the following classes:
 A front-end interface was developed using Streamlit to interact with the Naive Bayes classification model. Streamlit provides a user-friendly way to build interactive web applications for machine learning and data science projects.
 
 ##Image Gallery
-![Alt Text](https://github.com/ParthaSarathi-23/Newsification/blob/main/Img-1.png?raw=true)
+![Alt Text](/assets/Img-1.png?raw=true)
 ![Alt Text](https://github.com/ParthaSarathi-23/Newsification/blob/main/Img-2.png?raw=true)
 ![Alt Text](https://github.com/ParthaSarathi-23/Newsification/blob/main/Img-3.png?raw=true)
 ![Alt Text](https://github.com/ParthaSarathi-23/Newsification/blob/main/Img-4.png?raw=true)
