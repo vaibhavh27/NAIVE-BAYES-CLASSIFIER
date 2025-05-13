@@ -103,7 +103,7 @@ To set up and run this project locally:
 
 ## Usage
 To run the Streamlit application:
-```bash
+bash
 streamlit run Home.py
 IGNORE_WHEN_COPYING_START
 content_copy
