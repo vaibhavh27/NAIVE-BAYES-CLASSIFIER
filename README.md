@@ -1,10 +1,6 @@
-Okay, I've removed the "Table of Contents" section as requested.
-
-Here's the updated README.md without the Table of Contents:
 
 # NewsPalette: News Article Classification
-
-**Project Completion Date: October 2024**
+October 2024
 
 ## Introduction
 NewsPalette is a machine learning project designed to classify news articles into predefined categories. This application utilizes the Naive Bayes algorithm to perform the classification, trained on a dataset sourced from Kaggle. The primary goal is to accurately categorize news content, providing users with an organized way to consume information based on their interests.
